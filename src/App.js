@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Main from './main/Main';
 
+import PizzaBooking from './pizzaBooking/PizzaBooking';
 function App() {
+  const [dataPizza, setDataPizza] = useState();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PizzaBooking onsetDataPizza={setDataPizza}/>
+      <Main ondataPizza={dataPizza}/>
     </div>
   );
 }
