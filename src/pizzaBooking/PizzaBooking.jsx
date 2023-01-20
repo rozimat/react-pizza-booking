@@ -1,8 +1,17 @@
 import React, {useState} from 'react'
 import "./PizzaBooking.css";
 
+  const totalSum = {
+    "thin": 10,
+    "medium" : 25,
+    "thik": 30,
+    "25sm" : 10,
+    "30sm": 12,
+    "35sm": 15
+  }
+
+
 function PizzaBooking(props) {
- 
   const [inputValues, setInputValue] = useState({
     name: "",
     number: "",
@@ -32,7 +41,8 @@ function PizzaBooking(props) {
   
   const formWrapperSend=(e)=>{
     e.preventDefault();
-    const data1 ={
+    const  datas= {
+      id: Math.random().toFixed(3),
       name: inputValues.name,
       number: inputValues.number,
       addres: inputValues.addres,
@@ -44,9 +54,8 @@ function PizzaBooking(props) {
       mushroom: inputValues.mushroom,
       oilve: inputValues.oilve,
       horsemeat: inputValues.horsemeat,
-      add: inputValues.add
-    }
-    props.onsetDataPizza(data1);
+      add: inputValues.add };
+      props.onDataHandler(datas);
   }
 
   return (
