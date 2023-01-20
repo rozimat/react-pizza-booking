@@ -1,13 +1,21 @@
 import React, {useState} from 'react'
 import "./PizzaBooking.css";
 
-  const totalSum = {
+  const price = {
     "thin": 10,
     "medium" : 25,
     "thik": 30,
     "25sm" : 10,
     "30sm": 12,
-    "35sm": 15
+    "35sm": 15,
+    "tamato": 5,
+    "curcumber": 5,
+    "turkeymeat": 5,
+    "mushroom": 5,
+    "oilve": 5,
+    "horsemeat": 5,
+    "add": 3
+
   }
 
 
@@ -41,6 +49,9 @@ function PizzaBooking(props) {
   
   const formWrapperSend=(e)=>{
     e.preventDefault();
+    let totalSum = price[inputValues.radius]+ price[inputValues.santimetr];
+  
+
     const  datas= {
       id: Math.random().toFixed(3),
       name: inputValues.name,
@@ -54,7 +65,10 @@ function PizzaBooking(props) {
       mushroom: inputValues.mushroom,
       oilve: inputValues.oilve,
       horsemeat: inputValues.horsemeat,
-      add: inputValues.add };
+      add: inputValues.add ,
+      total: totalSum,
+
+    };
       props.onDataHandler(datas);
   }
 

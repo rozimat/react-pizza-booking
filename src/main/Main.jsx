@@ -29,7 +29,7 @@ function Main(props) {
               <span>{item.horsmeat}</span>
             </div>
               <h3>Add: {item.add}</h3>
-              <h2>Total: <small>$44</small></h2>
+              <h2>Total: <small>${item.total}</small></h2>
               <button onClick={()=>props.OndeleteFunction(item.id)}> Delete</button>
             </div>
 
